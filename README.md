@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Medline Search Engine
+
+## Overview
+
+The **Medline Search Engine** is a specialized search platform designed for querying and retrieving information exclusively from the MedlinePlus dataset. It mimics the functionality of general-purpose search engines like Google but is tailored for Medline data. It efficiently calculates relevance scores for user queries using **TF-IDF** and **Cosine Similarity**, providing the most relevant results from the knowledge base.
+
+## Features
+
+- **Data Scraped from MedlinePlus**: The dataset includes comprehensive health-related information.
+- **Inverted Index**: Efficient data indexing for rapid query processing.
+- **TF-IDF Score Calculation**: Evaluates term relevance in both user queries and documents.
+- **Cosine Similarity**: Measures similarity between the query and all documents in the knowledge base.
+- **Top Results Retrieval**: Displays the best-matching documents for user queries.
+- **Modern UI**: Built with **Next.js** for a fast and responsive user experience.
+
+## Technical Details
+
+1. **Data Indexing**:
+   - Scraped all content from the MedlinePlus website.
+   - Created an inverted index for efficient term lookups.
+
+2. **Query Processing**:
+   - Tokenizes user queries.
+   - Calculates **TF-IDF** scores for query terms and document terms.
+   - Computes **Cosine Similarity** to rank documents by relevance.
+
+3. **Results Presentation**:
+   - Displays the most relevant documents in order of similarity score.
+
+## Prerequisites
+
+- **Node.js** (v14.x or later)
+- **npm** or **yarn**
 
 ## Getting Started
 
-First, run the development server:
+1. **Extract the Project Archive**:
+   ```bash
+   unzip medline-search-engine.zip
+   cd medline-search-engine
+   ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+2. **Install Dependencies**:
+   ```bash
+   npm install
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. **Run the Development Server**:
+   ```bash
+   npm run dev
+   ```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+4. Open your browser and navigate to `http://localhost:3000`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Usage
 
-## Learn More
+1. Enter a query related to Medline data in the search bar.
+2. The engine computes TF-IDF and Cosine Similarity scores.
+3. Top matching documents are displayed, ranked by relevance.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Technology Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Frontend**: Next.js
+- **Backend**: Node.js
+- **Data Storage**: MySQL
+- **Algorithm**: TF-IDF and Cosine Similarity for ranking documents
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+**Author**: Alim Khan Abdul  
+```  
